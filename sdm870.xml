@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<remote name="git"
+        fetch="https://github.com/sdm870/" />
+
+	<project name="android_device_xiaomi_alioth" path="device/xiaomi/alioth" remote="git" revision="lineage-18.1" />
+	<project name="android_device_xiaomi_sm8250-common" path="device/xiaomi/sm8250-common" remote="git" revision="lineage-18.1" />
+	<project name="android_kernel_xiaomi_sm8250" path="kernel/xiaomi/sm8250" remote="git" revision="lineage-18.1" />
+	<project name="android_vendor_xiaomi" path="vendor/xiaomi" remote="git" revision="lineage-18.1" />
+	<project name="android_hardware_xiaomi" path="hardware/xiaomi" remote="git" revision="lineage-18.1" />
+</manifest>

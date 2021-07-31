@@ -42,14 +42,9 @@ function apply_patch {
 #################################################################
 # CHERRYPICKS
 #
-# Example: ./vendor/lineage/build/tools/repopick.py [CHANGE_NUMBER]
+# Example: repopick [CHANGE_NUMBER]
 #################################################################
 
-## Fix LiveDisplay legacymm
-repopick 293077/1
-
-## hardware/interfaces
-repopick 296611
 
 #################################################################
 # PATCHES

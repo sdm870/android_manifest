@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+	<remote name="gitlab"
+        fetch="https://gitlab.com/" />
 
-	<remote name="git"
-        fetch="https://github.com/sdm870/" />
+	<project name="sdm870/android_device_xiaomi_alioth" path="device/xiaomi/alioth" remote="github" revision="lineage-19.0" />
+	<project name="sdm870/android_device_xiaomi_sm8250-common" path="device/xiaomi/sm8250-common" remote="github" revision="lineage-19.0" />
+	<project name="sdm870/android_kernel_xiaomi_sm8250" path="kernel/xiaomi/sm8250" remote="github" revision="lineage-19.0" />
+	<project name="sdm870/android_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab" revision="lineage-19.0" />
+	<project name="sdm870/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" revision="lineage-19.0" />
 
-	<project name="android_device_xiaomi_alioth" path="device/xiaomi/alioth" remote="git" revision="lineage-18.1" />
-	<project name="android_device_xiaomi_sm8250-common" path="device/xiaomi/sm8250-common" remote="git" revision="lineage-18.1" />
-	<project name="android_kernel_xiaomi_sm8250" path="kernel/xiaomi/sm8250" remote="git" revision="lineage-18.1" />
-	<project name="android_vendor_xiaomi" path="vendor/xiaomi" remote="git" revision="lineage-18.1" />
-	<project name="android_hardware_xiaomi" path="hardware/xiaomi" remote="git" revision="lineage-18.1" />
+        <remove-project name="platform/hardware/nxp/nfc" />
+	<project name="sdm870/android_hardware_nxp_nfc" path="hardware/nxp/nfc" remote="github" revision="lineage-19.0" />
+
+        <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
+	<project name="sdm870/android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="lineage-19.0" />
+
+        <remove-project name="LineageOS/android_device_lineage_sepolicy" />
+	<project name="sdm870/android_device_lineage_sepolicy" path="device/lineage/sepolicy" remote="github" revision="lineage-19.0" />
+
+        <project name="sdm870/android_vendor_qcom_opensource_cryptfs_hw" path="vendor/qcom/opensource/cryptfs_hw" remote="github" revision="lineage-19.0" />
 </manifest>

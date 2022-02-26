@@ -23,14 +23,14 @@ familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 
 4.To initialize your local repository using the LineageOS trees, use a command like this:
 
-    repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
+    repo init -u git://github.com/LineageOS/android.git -b lineage-19.0
      
 
 5.Now create a local_manifests dir and Copy the required manifests in that folder.
 
     mkdir .repo/local_manifests
 
-    wget -O .repo/local_manifests/sdm870.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-18.1/sdm870.xml'
+    wget -O .repo/local_manifests/sdm870.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.0/sdm870.xml'
     
 6.Then to sync up:
 

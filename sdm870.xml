@@ -11,12 +11,4 @@
 
         <remove-project name="platform/hardware/nxp/nfc" />
 	<project name="sdm870/android_hardware_nxp_nfc" path="hardware/nxp/nfc" remote="github" revision="lineage-19.0" />
-
-        <remove-project name="LineageOS/android_hardware_lineage_interfaces" />
-	<project name="sdm870/android_hardware_lineage_interfaces" path="hardware/lineage/interfaces" remote="github" revision="lineage-19.0" />
-
-        <remove-project name="LineageOS/android_device_lineage_sepolicy" />
-	<project name="sdm870/android_device_lineage_sepolicy" path="device/lineage/sepolicy" remote="github" revision="lineage-19.0" />
-
-        <project name="sdm870/android_vendor_qcom_opensource_cryptfs_hw" path="vendor/qcom/opensource/cryptfs_hw" remote="github" revision="lineage-19.0" />
 </manifest>

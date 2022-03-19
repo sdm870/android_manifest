@@ -45,6 +45,17 @@ function apply_patch {
 # repopick [CHANGE_NUMBER]                                      #
 #################################################################
 
+# android_packages_apps_Settings
+repopick 326382 322726
+
+# android_hardware_xiaomi
+repopick 323135
+
+# twelve-suw-redesign
+repopick -t twelve-suw-redesign
+
+# twelve-buttons
+repopick 326714
 
 #################################################################
 # PATCHES

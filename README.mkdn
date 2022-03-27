@@ -43,7 +43,7 @@ OR, for those with limited bandwidth/storage:
 7.Run this command to pick from gerrit
 
     wget -O patch.sh 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patch.sh'
-    ./patch.sh
+    bash patch.sh
 
 8.Run this command if you used the automatic method of setup above (50GB ccache (onetime requirement))
 

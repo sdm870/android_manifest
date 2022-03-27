@@ -45,17 +45,21 @@ function apply_patch {
 # repopick [CHANGE_NUMBER]                                      #
 #################################################################
 
-# android_packages_apps_Settings
-repopick 326382 322726
+# android_device_xiaomi_sm8250-common
+repopick -f 326561
+repopick 326578 326708 326709 326999
+
+# android_hardware_lineage_interfaces
+repopick 322575
 
 # android_hardware_xiaomi
-repopick 323135
+repopick 323135 327376
 
-# twelve-suw-redesign
-repopick -t twelve-suw-redesign
+# android_device_lineage_sepolicy
+repopick 322576
 
-# twelve-buttons
-repopick 326714
+# android_kernel_xiaomi_sm8250
+repopick 314802
 
 #################################################################
 # PATCHES

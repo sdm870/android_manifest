@@ -70,7 +70,7 @@ repopick 320714
 repopick 328630
 
 # android_packages_apps_Backgrounds
-repopick 328434 328435 328436
+repopick 328434 328435 328436 328810 328811
 
 # android_packages_apps_LineageParts
 repopick 326739

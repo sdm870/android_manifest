@@ -45,20 +45,17 @@ function apply_patch {
 # repopick [CHANGE_NUMBER]                                      #
 #################################################################
 
-# android_build_soong
-repopick 327111
-
 # android_device_xiaomi_sm8250-common
-repopick 328465 326578
+repopick 328465 330224 330211 330210 330212 330214 330222 330197 330198 330199 330223 330192
 
 # android_kernel_xiaomi_sm8250
 repopick 314802
 
 # android_frameworks_base
-repopick 320714 329042 329038 329326
+repopick 320714 329326 330044
 
 # android_packages_apps_LineageParts
-repopick 326739 329037
+repopick 326739
 
 # android_packages_apps_Updater
 repopick 323341

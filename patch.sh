@@ -46,13 +46,11 @@ function apply_patch {
 #################################################################
 
 # android_device_xiaomi_sm8250-common
-repopick 330224 330211 330210 330212 330214 330222
 
 # android_device_xiaomi_alioth
-repopick 330221 330325 330326
 
 # android_frameworks_base
-repopick 320714 329326 330044
+repopick 320714 329326
 
 # android_packages_apps_LineageParts
 repopick 326739
@@ -68,3 +66,5 @@ repopick 323341
 # Example: apply_patch [REPO_DIR] [PATCH_FILE]
 #################################################################
 
+apply_patch frameworks/base 0001-base-Spoof-build-fp-for-GMS.patch
+apply_patch frameworks/base 0002-SpoofFingerprint-spoof-photos.patch

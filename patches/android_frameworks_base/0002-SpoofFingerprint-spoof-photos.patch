@@ -1,0 +1,65 @@
+From a1ea046754f358ea85763b7e8c7da01a6c8e48a8 Mon Sep 17 00:00:00 2001
+From: althafvly <althafvly@gmail.com>
+Date: Tue, 12 Apr 2022 00:43:55 +0530
+Subject: [PATCH 2/2] SpoofFingerprint: spoof photos
+
+Change-Id: I03d784cb1094424db165cdbd88a89c2875e36d25
+---
+ .../internal/util/SpoofFingerprint.java       | 25 +++++++++++++++++--
+ 1 file changed, 23 insertions(+), 2 deletions(-)
+
+diff --git a/core/java/com/android/internal/util/SpoofFingerprint.java b/core/java/com/android/internal/util/SpoofFingerprint.java
+index 9774b5068def..d76f1f9b9463 100644
+--- a/core/java/com/android/internal/util/SpoofFingerprint.java
++++ b/core/java/com/android/internal/util/SpoofFingerprint.java
+@@ -31,16 +31,29 @@ public class SpoofFingerprint {
+ 
+     private static volatile boolean sIsGms = false;
+     public static final String PACKAGE_GMS = "com.google.android.gms";
+-    public static final String PACKAGE_VENDING = "com.android.vending";
++    public static final String PACKAGE_PHOTOS = "com.google.android.apps.photos";
+ 
+     private static final Map<String, Object> propsToChange;
++    private static final Map<String, Object> propsToChangeXL;
+     private static final Map<String, ArrayList<String>> propsToKeep;
+ 
++    private static final String[] packagesToChange = {
++        "com.google.android.gms",
++        "com.android.vending"
++    };
++
+     static {
+         propsToKeep = new HashMap<>();
+         propsToKeep.put("com.google.android.settings.intelligence", new ArrayList<String>(Arrays.asList("FINGERPRINT")));
+         propsToChange = new HashMap<>();
+         propsToChange.put("FINGERPRINT", "Xiaomi/polaris/polaris:8.0.0/OPR1.170623.032/V9.5.19.0.ODGMIFA:user/release-keys");
++        propsToChangeXL = new HashMap<>();
++        propsToChangeXL.put("BRAND", "google");
++        propsToChangeXL.put("MANUFACTURER", "Google");
++        propsToChangeXL.put("DEVICE", "marlin");
++        propsToChangeXL.put("PRODUCT", "marlin");
++        propsToChangeXL.put("MODEL", "Pixel XL");
++        propsToChangeXL.put("FINGERPRINT", "google/marlin/marlin:10/QP1A.191005.007.A3/5972272:user/release-keys");
+     }
+ 
+     public static void setProps(String packageName) {
+@@ -50,7 +63,15 @@ public class SpoofFingerprint {
+         if (packageName.equals(PACKAGE_GMS)) {
+             sIsGms = true;
+         }
+-        if (packageName.equals(PACKAGE_GMS) || packageName.equals(PACKAGE_VENDING)){
++        if (packageName.equals(PACKAGE_PHOTOS)){
++            if (DEBUG) Log.d(TAG, "Defining props for: " + packageName);
++            for (Map.Entry<String, Object> prop : propsToChangeXL.entrySet()) {
++                String key = prop.getKey();
++                Object value = prop.getValue();
++                if (DEBUG) Log.d(TAG, "Defining " + key + " prop for: " + packageName);
++                setPropValue(key, value);
++            }
++        } else if (Arrays.asList(packagesToChange).contains(packageName)){
+             if (DEBUG) Log.d(TAG, "Defining props for: " + packageName);
+             for (Map.Entry<String, Object> prop : propsToChange.entrySet()) {
+                 String key = prop.getKey();
+-- 
+2.25.1
+

@@ -53,7 +53,6 @@ OR, for those with limited bandwidth/storage:
 
     export USE_CCACHE=1
     export CCACHE_EXEC=$(command -v ccache)
-    export CCACHE_DIR=$HOME/.ccache
 
 10.To start the build once everything is ready , Run to prepare our devices list
 

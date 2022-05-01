@@ -42,11 +42,8 @@ OR, for those with limited bandwidth/storage:
 
 7.Run this command to patch stuff and pick from gerrit
 
-    wget -O 0001-base-Spoof-build-fp-for-GMS.patch 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patches/android_frameworks_base/0001-base-Spoof-build-fp-for-GMS.patch'
-    wget -O 0002-SpoofFingerprint-spoof-photos.patch 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patches/android_frameworks_base/0002-SpoofFingerprint-spoof-photos.patch'
     wget -O patch.sh 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patch.sh'
     bash patch.sh
-    rm 00*.patch rm patch.sh
 
 8.Run this command if you used the automatic method of setup above (50GB ccache (onetime requirement))
 

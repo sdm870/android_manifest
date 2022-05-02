@@ -38,7 +38,7 @@ WHITE='\033[1;37m'
 function download_patch {
     echo -e "${GREEN}Downloading patch $2...${NOCOLOR}"
     cd $PATCH_DIR
-    wget -O $2 https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patches/$1/$2
+    wget -O $2 https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patches/$1/$2 -q --show-progress
     echo -e "${GREEN}.................${NOCOLOR}"
 }
 

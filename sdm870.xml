@@ -14,7 +14,6 @@
 	<project path="hardware/qcom-caf/sm8250/display" name="android_hardware_qcom_display" revision="lineage-19.0-caf-sm8250" remote="lineageos" />
 
 	<!-- Extras -->
-	<project name="althafvly/android_vendor_google_pixel" path="vendor/google_pixel" remote="github" revision="lineage-19.1" />
-	<project name="althafvly/android_vendor_extra" path="vendor/extra" remote="github" revision="lineage-19.1" />
+	<project name="althafvly/android_vendor_google_pixel" path="vendor/extra" remote="github" revision="lineage-19.1" />
 	<project name="althafvly/lineage_script" path="script" remote="github" revision="master" />
 </manifest>

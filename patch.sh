@@ -43,8 +43,8 @@ function apply_patch {
     echo -e "${LIGHTBLUE}Patch file:${NOCOLOR} $2"
 
     if [ -d "$1" ]; then
-        #cd $1
-        if [ -f "$2" ]; then
+        cd $1
+        if [ -f "$PATCH_DIR/$2" ]; then
             git am -3 --ignore-whitespace $PATCH_DIR/$2
             rm $PATCH_DIR/$2
         else

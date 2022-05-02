@@ -30,6 +30,11 @@ LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
+#################################################################
+# Download patches
+#
+# Example: download_patch [FILE_DIR_IN_PATCHES] [PATCH_FILE]
+#################################################################
 function download_patch {
     echo -e "${GREEN}Downloading patch $2...${NOCOLOR}"
     cd $PATCH_DIR
@@ -37,7 +42,13 @@ function download_patch {
     echo -e "${GREEN}.................${NOCOLOR}"
 }
 
+#################################################################
+# Apply patches
+#
+# Example: apply_patch [REPO_DIR] [PATCH_FILE]
+#################################################################
 function apply_patch {
+    download_patch $1 $2
     echo -e "${GREEN}Applying patch...${NOCOLOR}"
     echo -e "${LIGHTBLUE}Target repo:${NOCOLOR} $1"
     echo -e "${LIGHTBLUE}Patch file:${NOCOLOR} $2"
@@ -46,7 +57,6 @@ function apply_patch {
         cd $1
         if [ -f "$PATCH_DIR/$2" ]; then
             git am -3 --ignore-whitespace $PATCH_DIR/$2
-            rm $PATCH_DIR/$2
         else
             echo "Can't find patch file $2, skipping patch"
         fi
@@ -54,8 +64,16 @@ function apply_patch {
     else
         echo "Can't find dir $1, skipping patch"
     fi
+    if [ -f "$PATCH_DIR/$2" ]; then
+        rm $PATCH_DIR/$2
+    fi
     echo -e "${GREEN}.................${NOCOLOR}"
 }
+
+apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
+apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
+apply_patch system/core 0001-init-Set-properties-to-make-SafetyNet-pass.patch
+apply_patch system/core 0001-fastboot-Revert-to-Android-11-method-of-checking-loc.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #
@@ -86,24 +104,3 @@ else
     # android_vendor_lineage
     #repopick
 fi
-
-#################################################################
-# Download patches
-#
-# Example: download_patch [FILE_DIR_IN_PATCHES] [PATCH_FILE]
-#################################################################
-download_patch android_frameworks_base 0001-base-Introduce-PixelPropsUtils.patch
-download_patch android_frameworks_base 0001-PixelPropsUtils-spoof-photos.patch
-download_patch android_system_core 0001-init-Set-properties-to-make-SafetyNet-pass.patch
-download_patch android_system_core 0001-fastboot-Revert-to-Android-11-method-of-checking-loc.patch
-
-#################################################################
-# Apply patches
-#
-# Example: apply_patch [REPO_DIR] [PATCH_FILE]
-#################################################################
-
-apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
-apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
-apply_patch system/core 0001-init-Set-properties-to-make-SafetyNet-pass.patch
-apply_patch system/core 0001-fastboot-Revert-to-Android-11-method-of-checking-loc.patch

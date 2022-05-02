@@ -1,18 +1,18 @@
-From a1ea046754f358ea85763b7e8c7da01a6c8e48a8 Mon Sep 17 00:00:00 2001
+From 01861e35b59f32362583eea2506c989719cac1d4 Mon Sep 17 00:00:00 2001
 From: althafvly <althafvly@gmail.com>
 Date: Tue, 12 Apr 2022 00:43:55 +0530
-Subject: [PATCH 2/2] SpoofFingerprint: spoof photos
+Subject: [PATCH] PixelPropsUtils: spoof photos
 
 Change-Id: I03d784cb1094424db165cdbd88a89c2875e36d25
 ---
- .../internal/util/SpoofFingerprint.java       | 25 +++++++++++++++++--
+ .../internal/util/custom/PixelPropsUtils.java | 25 +++++++++++++++++--
  1 file changed, 23 insertions(+), 2 deletions(-)
 
-diff --git a/core/java/com/android/internal/util/SpoofFingerprint.java b/core/java/com/android/internal/util/SpoofFingerprint.java
-index 9774b5068def..d76f1f9b9463 100644
---- a/core/java/com/android/internal/util/SpoofFingerprint.java
-+++ b/core/java/com/android/internal/util/SpoofFingerprint.java
-@@ -31,16 +31,29 @@ public class SpoofFingerprint {
+diff --git a/core/java/com/android/internal/util/custom/PixelPropsUtils.java b/core/java/com/android/internal/util/custom/PixelPropsUtils.java
+index 26142d6172d5..8e129a1140cc 100644
+--- a/core/java/com/android/internal/util/custom/PixelPropsUtils.java
++++ b/core/java/com/android/internal/util/custom/PixelPropsUtils.java
+@@ -31,16 +31,29 @@ public class PixelPropsUtils {
  
      private static volatile boolean sIsGms = false;
      public static final String PACKAGE_GMS = "com.google.android.gms";
@@ -43,7 +43,7 @@ index 9774b5068def..d76f1f9b9463 100644
      }
  
      public static void setProps(String packageName) {
-@@ -50,7 +63,15 @@ public class SpoofFingerprint {
+@@ -50,7 +63,15 @@ public class PixelPropsUtils {
          if (packageName.equals(PACKAGE_GMS)) {
              sIsGms = true;
          }

@@ -1,0 +1,36 @@
+From 445b50f841985d5de84fbb93dbebb4e695df7a74 Mon Sep 17 00:00:00 2001
+From: Danny Lin <danny@kdrag0n.dev>
+Date: Tue, 12 Oct 2021 02:32:41 -0700
+Subject: [PATCH] fastboot: Revert to Android 11 method of checking lock status
+
+Now that we're setting system-wide properties for SafetyNet, which
+includes ro.boot.verifiedbootstate=green, fastbootd always detects the
+bootloader as being locked. Revert to the Android 11 method of reading
+directly from the kernel cmdline to work arround the issue.
+
+Change-Id: I57f6d48acddb29748778053edf354d7bd8994bd7
+---
+ fastboot/device/utility.cpp | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/fastboot/device/utility.cpp b/fastboot/device/utility.cpp
+index 07ad9028c..f9267e0eb 100644
+--- a/fastboot/device/utility.cpp
++++ b/fastboot/device/utility.cpp
+@@ -204,7 +204,12 @@ std::vector<std::string> ListPartitions(FastbootDevice* device) {
+ }
+ 
+ bool GetDeviceLockStatus() {
+-    return android::base::GetProperty("ro.boot.verifiedbootstate", "") != "orange";
++    std::string cmdline;
++    // Return lock status true if unable to read kernel command line.
++    if (!android::base::ReadFileToString("/proc/cmdline", &cmdline)) {
++        return true;
++    }
++    return cmdline.find("androidboot.verifiedbootstate=orange") == std::string::npos;
+ }
+ 
+ bool UpdateAllPartitionMetadata(FastbootDevice* device, const std::string& super_name,
+-- 
+2.25.1
+

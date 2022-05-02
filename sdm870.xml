@@ -16,6 +16,5 @@
 	<!-- Extras -->
 	<project name="althafvly/android_vendor_google_pixel" path="vendor/google_pixel" remote="github" revision="lineage-19.1" />
 	<project name="althafvly/android_vendor_extra" path="vendor/extra" remote="github" revision="lineage-19.1" />
-	<project name="althafvly/ih8sn" path="ih8sn" remote="github" revision="master" />
 	<project name="althafvly/lineage_script" path="script" remote="github" revision="master" />
 </manifest>

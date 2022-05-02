@@ -92,8 +92,10 @@ fi
 #
 # Example: download_patch [FILE_DIR_IN_PATCHES] [PATCH_FILE]
 #################################################################
-download_patch android_frameworks_base 0001-base-Spoof-build-fp-for-GMS.patch
-download_patch android_frameworks_base 0002-SpoofFingerprint-spoof-photos.patch
+download_patch android_frameworks_base 0001-base-Introduce-PixelPropsUtils.patch
+download_patch android_frameworks_base 0001-PixelPropsUtils-spoof-photos.patch
+download_patch android_system_core 0001-init-Set-properties-to-make-SafetyNet-pass.patch
+download_patch android_system_core 0001-fastboot-Revert-to-Android-11-method-of-checking-loc.patch
 
 #################################################################
 # Apply patches
@@ -101,5 +103,7 @@ download_patch android_frameworks_base 0002-SpoofFingerprint-spoof-photos.patch
 # Example: apply_patch [REPO_DIR] [PATCH_FILE]
 #################################################################
 
-apply_patch frameworks/base 0001-base-Spoof-build-fp-for-GMS.patch
-apply_patch frameworks/base 0002-SpoofFingerprint-spoof-photos.patch
+apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
+apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
+apply_patch system/core 0001-init-Set-properties-to-make-SafetyNet-pass.patch
+apply_patch system/core 0001-fastboot-Revert-to-Android-11-method-of-checking-loc.patch

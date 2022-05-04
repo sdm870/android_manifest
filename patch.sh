@@ -74,6 +74,7 @@ apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
 apply_patch system/core 0001-init-Set-properties-to-make-SafetyNet-pass.patch
 apply_patch system/core 0001-fastboot-Revert-to-Android-11-method-of-checking-loc.patch
+apply_patch vendor/lineage 0001-add-pixel-config.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #

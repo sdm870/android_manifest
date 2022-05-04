@@ -1,0 +1,47 @@
+From 3930097d45e4dd53f836f9763b710d184daa7b56 Mon Sep 17 00:00:00 2001
+From: althafvly <althafvly@gmail.com>
+Date: Wed, 26 Jan 2022 21:43:27 +0100
+Subject: [PATCH] add pixel config
+
+Change-Id: I34270da91c057630efcab601f8f9cc71aa005904
+---
+ config/common.mk                                     |  3 +++
+ .../common/etc/sysconfig/pixel_2016_exclusive.xml    | 12 ++++++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml
+
+diff --git a/config/common.mk b/config/common.mk
+index 913d36f..5dfeedb 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -24,6 +24,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
+ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
+ endif
+ 
++PRODUCT_COPY_FILES += \
++    vendor/lineage/prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml:system/etc/sysconfig/pixel_2016_exclusive.xml
++
+ # Backup Tool
+ PRODUCT_COPY_FILES += \
+     vendor/lineage/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+diff --git a/prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml b/prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml
+new file mode 100644
+index 0000000..72addee
+--- /dev/null
++++ b/prebuilt/common/etc/sysconfig/pixel_2016_exclusive.xml
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++
++<!-- These are configurations that should exist on Google's 2016 Pixel devices. -->
++<config>
++    <!-- Both versions of this string are needed due to a miscommunication. b/29978934 -->
++    <feature name="com.google.android.apps.photos.NEXUS_PRELOAD" />
++    <feature name="com.google.android.apps.photos.nexus_preload" />
++
++    <!-- Allow Better Bug to take bug report. -->
++    <bugreport-whitelisted package="com.google.android.apps.betterbug" />
++    <bugreport-whitelisted package="com.google.android.apps.internal.betterbug" />
++</config>
+-- 
+2.25.1
+

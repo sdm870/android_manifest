@@ -37,8 +37,8 @@ WHITE='\033[1;37m'
 #################################################################
 function download_patch {
     echo -e "${GREEN}Downloading patch $2...${NOCOLOR}"
-    cd $PATCH_DIR
-    wget -O $2 https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patches/$1/$2 -q --show-progress
+    cd "$PATCH_DIR" || exit
+    wget -O "$2" https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patches/"$1"/"$2" -q --show-progress
     echo -e "${GREEN}.................${NOCOLOR}"
 }
 
@@ -48,24 +48,24 @@ function download_patch {
 # Example: apply_patch [REPO_DIR] [PATCH_FILE]
 #################################################################
 function apply_patch {
-    download_patch $1 $2
+    download_patch "$1" "$2"
     echo -e "${GREEN}Applying patch...${NOCOLOR}"
     echo -e "${LIGHTBLUE}Target repo:${NOCOLOR} $1"
     echo -e "${LIGHTBLUE}Patch file:${NOCOLOR} $2"
 
     if [ -d "$1" ]; then
-        cd $1
+        cd "$1" || exit
         if [ -f "$PATCH_DIR/$2" ]; then
-            git am -3 --ignore-whitespace $PATCH_DIR/$2
+            git am -3 --ignore-whitespace "$PATCH_DIR"/"$2"
         else
             echo "Can't find patch file $2, skipping patch"
         fi
-        cd $PATCH_DIR && echo ""
+        cd "$PATCH_DIR" && echo ""
     else
         echo "Can't find dir $1, skipping patch"
     fi
     if [ -f "$PATCH_DIR/$2" ]; then
-        rm $PATCH_DIR/$2
+        rm "$PATCH_DIR"/"$2"
     fi
     echo -e "${GREEN}.................${NOCOLOR}"
 }

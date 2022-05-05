@@ -1,0 +1,103 @@
+From 18fa5a6c49c7550a2e97b9b8c0c2782756477d7d Mon Sep 17 00:00:00 2001
+From: Michael Bestas <mkbestas@lineageos.org>
+Date: Tue, 15 Mar 2022 17:54:45 +0200
+Subject: [PATCH] Trust: Add option to always disable USB gadgets
+
+Change-Id: Id24ce4f6cc469e17f8674075801f0482d80c8650
+---
+
+diff --git a/res/values/arrays.xml b/res/values/arrays.xml
+index ef8ac34..76a7e87 100644
+--- a/res/values/arrays.xml
++++ b/res/values/arrays.xml
+@@ -431,4 +431,17 @@
+         <item>100</item>
+         <item>200</item>
+     </string-array>
++
++    <!-- Restrict USB -->
++    <string-array name="trust_restrict_usb_entries" translatable="false">
++        <item>@string/trust_restrict_usb_always</item>
++        <item>@string/trust_restrict_usb_keyguard</item>
++        <item>@string/trust_restrict_usb_disabled</item>
++    </string-array>
++
++    <string-array name="trust_restrict_usb_values" translatable="false">
++        <item>2</item>
++        <item>1</item>
++        <item>0</item>
++    </string-array>
+ </resources>
+diff --git a/res/values/strings.xml b/res/values/strings.xml
+index 9fe4181..8b57a12 100644
+--- a/res/values/strings.xml
++++ b/res/values/strings.xml
+@@ -664,7 +664,10 @@
+     <string name="trust_onboarding_learn_more">Learn more</string>
+     <string name="trust_onboarding_done">Got it</string>
+     <string name="trust_restrict_usb_title">Restrict USB</string>
+-    <string name="trust_restrict_usb_summary">Disable new USB gadgets when the device is locked</string>
++    <string name="trust_restrict_usb_summary">Control support for USB connections such as earphones, storage devices, input (mice, keyboards, joysticks) and ADB</string>
++    <string name="trust_restrict_usb_always">Deny USB connections</string>
++    <string name="trust_restrict_usb_keyguard">Allow USB connections when unlocked</string>
++    <string name="trust_restrict_usb_disabled">Allow USB connections always</string>
+ 
+     <!-- Sms limit -->
+     <string name="sms_security_check_limit_title">SMS message limit</string>
+diff --git a/res/xml/trust_preferences.xml b/res/xml/trust_preferences.xml
+index bdb1aa7..108371c 100644
+--- a/res/xml/trust_preferences.xml
++++ b/res/xml/trust_preferences.xml
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <!--
+-     Copyright (C) 2018-2019 The LineageOS Project
++     Copyright (C) 2018-2022 The LineageOS Project
+ 
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+@@ -39,11 +39,13 @@
+         android:key="trust_category_tools"
+         android:title="@string/trust_category_tools">
+ 
+-        <lineageos.preference.LineageSecureSettingSwitchPreference
++        <lineageos.preference.LineageGlobalSettingListPreference
+             android:key="trust_restrict_usb"
+             android:title="@string/trust_restrict_usb_title"
+             android:summary="@string/trust_restrict_usb_summary"
+-            android:defaultValue="false" />
++            android:entries="@array/trust_restrict_usb_entries"
++            android:entryValues="@array/trust_restrict_usb_values"
++            android:defaultValue="0" />
+ 
+         <org.lineageos.internal.lineageparts.LineagePartsPreference
+             android:key="lineagestats" />
+diff --git a/src/org/lineageos/lineageparts/trust/TrustPreferences.java b/src/org/lineageos/lineageparts/trust/TrustPreferences.java
+index 79caa9a..7540e58 100644
+--- a/src/org/lineageos/lineageparts/trust/TrustPreferences.java
++++ b/src/org/lineageos/lineageparts/trust/TrustPreferences.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2018-2021 The LineageOS Project
++ * Copyright (C) 2018-2022 The LineageOS Project
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+@@ -31,7 +31,7 @@
+ import org.lineageos.lineageparts.R;
+ import org.lineageos.lineageparts.SettingsPreferenceFragment;
+ 
+-import lineageos.preference.LineageSecureSettingSwitchPreference;
++import lineageos.preference.LineageGlobalSettingListPreference;
+ import lineageos.providers.LineageSettings;
+ import lineageos.trust.TrustInterface;
+ 
+@@ -42,7 +42,7 @@
+     private Preference mSecurityPatchesPref;
+     private Preference mEncryptionPref;
+     private PreferenceCategory mToolsCategory;
+-    private LineageSecureSettingSwitchPreference mUsbRestrictorPref;
++    private LineageGlobalSettingListPreference mUsbRestrictorPref;
+     private ListPreference mSmsLimitPref;
+ 
+     private PreferenceCategory mWarnScreen;

@@ -72,8 +72,12 @@ function apply_patch {
 
 apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
-apply_patch system/core 0001-init-Set-properties-to-make-SafetyNet-pass.patch
-apply_patch system/core 0001-fastboot-Revert-to-Android-11-method-of-checking-loc.patch
+apply_patch frameworks/base add_burnIn_protection.patch
+apply_patch frameworks/base bring_in_drawables_for_statusbar_icon_toggles.patch
+apply_patch packages/apps/LineageParts add_option_to_always_disable_USB_gadgets.patch
+apply_patch packages/apps/Updater add_support_for_local_updates.patch
+apply_patch packages/overlays/Lineage dynamically_add_additional_fonts.patch
+apply_patch vendor/lineage add_script_for_dynamically_adding_fonts.patch
 apply_patch vendor/lineage 0001-add-pixel-config.patch
 
 #################################################################
@@ -94,20 +98,20 @@ else
     #repopick
 
     # android_frameworks_base
-    repopick 320714 329326
+    #repopick
 
     # android_packages_apps_LineageParts
-    repopick 326739
+    #repopick
 
     # android_packages_apps_Trebuchet
-    repopick 330789
+    #repopick
 
     # android_packages_apps_Updater
-    repopick 323341
+    #repopick
 
     # android_packages_overlays_Lineage
-    repopick -f 330450
+    #repopick
 
     # android_vendor_lineage
-    repopick -f 330449
+    #repopick
 fi

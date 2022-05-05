@@ -106,8 +106,8 @@ else
     repopick 323341
 
     # android_packages_overlays_Lineage
-    repopick 330450
+    repopick -f 330450
 
     # android_vendor_lineage
-    repopick 330449
+    repopick -f 330449
 fi

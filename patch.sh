@@ -114,4 +114,6 @@ else
 
     # android_vendor_lineage
     #repopick
+
+    echo "Nothing to repopick here"
 fi

@@ -98,22 +98,22 @@ else
     #repopick
 
     # android_frameworks_base
-    #repopick
+    #repopick 320714 329326
 
     # android_packages_apps_LineageParts
-    #repopick
+    #repopick 326739
 
     # android_packages_apps_Trebuchet
-    #repopick
+    #repopick 330789
 
     # android_packages_apps_Updater
-    #repopick
+    #repopick 323341
 
     # android_packages_overlays_Lineage
-    #repopick
+    #repopick -f 330450
 
     # android_vendor_lineage
-    #repopick
+    #repopick -f 330449
 
     echo "Nothing to repopick here"
 fi

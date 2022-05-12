@@ -70,6 +70,10 @@ function apply_patch {
     echo -e "${GREEN}.................${NOCOLOR}"
 }
 
+apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Add-dynamic-thermal-profile-impl.patch
+apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Fix-thermal-profile-build-for-an.patch
+apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Adapt-Thermal-Parts-to-S-style.patch
+apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Increase-BootCompletedReceiver-p.patch
 apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
 apply_patch frameworks/base add_burnIn_protection.patch
@@ -92,7 +96,7 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    #repopick
+    #repopick 318741 331246 331247 331248
 
     # android_device_xiaomi_alioth
     #repopick

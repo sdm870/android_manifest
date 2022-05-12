@@ -7,11 +7,8 @@
 	<project name="LineageOS/android_device_xiaomi_alioth" path="device/xiaomi/alioth" remote="github" revision="lineage-19.1" />
 	<project name="LineageOS/android_device_xiaomi_sm8250-common" path="device/xiaomi/sm8250-common" remote="github" revision="lineage-19.1" />
 	<project name="LineageOS/android_kernel_xiaomi_sm8250" path="kernel/xiaomi/sm8250" remote="github" revision="lineage-19.1" clone-depth="100" />
-	<project name="sdm870/android_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab" revision="lineage-19.1" clone-depth="10" />
+	<project name="the-muppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab" revision="lineage-19.1" clone-depth="10" />
 	<project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" revision="lineage-19.1" />
-
-	<remove-project name="LineageOS/android_hardware_qcom_display" />
-	<project path="hardware/qcom-caf/sm8250/display" name="android_hardware_qcom_display" revision="lineage-19.0-caf-sm8250" remote="lineageos" />
 
 	<!-- Extras -->
 	<project name="althafvly/android_vendor_google_pixel" path="vendor/google_pixel" remote="github" revision="lineage-19.1" />

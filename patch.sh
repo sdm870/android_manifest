@@ -97,9 +97,10 @@ if ! command -v repopick &>/dev/null; then
 else
     # android_device_xiaomi_sm8250-common
     #repopick 318741 331246 331247 331248
+    repopick 331131 330511 331272 331273
 
     # android_device_xiaomi_alioth
-    #repopick
+    repopick 331274
 
     # android_frameworks_base
     #repopick 320714 329326
@@ -118,6 +119,7 @@ else
 
     # android_vendor_lineage
     #repopick -f 330449
+    repopick 331362
 
     echo "Nothing to repopick here"
 fi

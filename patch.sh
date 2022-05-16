@@ -99,14 +99,14 @@ else
     # android_device_xiaomi_sm8250-common
     repopick 318741 331246 331247 331248
     repopick 331131 330511 331272 331273
-    repopick 331404 331409
+    repopick 331404 331409 331410 331411 
 
     # android_device_xiaomi_alioth
     repopick 331274
 
     # android_frameworks_base
     #repopick 320714 329326
-    repopick 330940 331389 331390 331391 331392 331393
+    repopick 331389 331390 331391 331392 331393
 
     # android_packages_apps_LineageParts
     #repopick 326739
@@ -115,18 +115,17 @@ else
     #repopick 330789
 
     # android_packages_apps_Settings
-    repopick 331382
+    #repopick
 
     # android_packages_apps_Updater
     #repopick 323341
 
     # android_packages_overlays_Lineage
     #repopick -f 330450
-    repopick 331383
 
     # android_vendor_lineage
     #repopick -f 330449
-    repopick 331362 331384
+    repopick 331362
 
     echo "Nothing to repopick here"
 fi

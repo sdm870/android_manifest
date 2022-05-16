@@ -83,6 +83,7 @@ apply_patch packages/apps/Updater add_support_for_local_updates.patch
 apply_patch packages/overlays/Lineage dynamically_add_additional_fonts.patch
 apply_patch vendor/lineage add_script_for_dynamically_adding_fonts.patch
 apply_patch vendor/lineage 0001-add-pixel-config.patch
+apply_patch vendor/xiaomi 0001-sm8250-common-alioth-Update-blobs-to-V13.0.3.0.SKHMI.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #

@@ -70,10 +70,10 @@ function apply_patch {
     echo -e "${GREEN}.................${NOCOLOR}"
 }
 
-apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Add-dynamic-thermal-profile-impl.patch
-apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Fix-thermal-profile-build-for-an.patch
-apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Adapt-Thermal-Parts-to-S-style.patch
-apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Increase-BootCompletedReceiver-p.patch
+#apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Add-dynamic-thermal-profile-impl.patch
+#apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Fix-thermal-profile-build-for-an.patch
+#apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Adapt-Thermal-Parts-to-S-style.patch
+#apply_patch device/xiaomi/sm8250-common 0001-sm8250-common-parts-Increase-BootCompletedReceiver-p.patch
 apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
 apply_patch frameworks/base add_burnIn_protection.patch
@@ -96,14 +96,16 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    #repopick 318741 331246 331247 331248
+    repopick 318741 331246 331247 331248
     repopick 331131 330511 331272 331273
+    repopick 331405 331406 331407 331408
 
     # android_device_xiaomi_alioth
     repopick 331274
 
     # android_frameworks_base
     #repopick 320714 329326
+    repopick 330940 331389 331390 331391 331392 331393
 
     # android_packages_apps_LineageParts
     #repopick 326739
@@ -111,15 +113,19 @@ else
     # android_packages_apps_Trebuchet
     #repopick 330789
 
+    # android_packages_apps_Settings
+    repopick 331382
+
     # android_packages_apps_Updater
     #repopick 323341
 
     # android_packages_overlays_Lineage
     #repopick -f 330450
+    repopick 331383
 
     # android_vendor_lineage
     #repopick -f 330449
-    repopick 331362
+    repopick 331362 331384
 
     echo "Nothing to repopick here"
 fi

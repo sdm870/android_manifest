@@ -97,7 +97,7 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    repopick 318741 331246 331247 331248
+    repopick 318741 331246 331247
     repopick 331131 330511 331272 331273
     repopick 331404 331409 331410 331411 
 

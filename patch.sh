@@ -79,7 +79,6 @@ apply_patch packages/apps/Updater add_support_for_local_updates.patch
 apply_patch packages/overlays/Lineage dynamically_add_additional_fonts.patch
 apply_patch vendor/lineage add_script_for_dynamically_adding_fonts.patch
 apply_patch vendor/lineage 0001-add-pixel-config.patch
-apply_patch vendor/xiaomi 0001-sm8250-common-alioth-Update-blobs-to-V13.0.3.0.SKHMI.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #
@@ -93,15 +92,15 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    repopick 331131 330511 331273
+    repopick 331131 330511 330510
 
     # android_device_xiaomi_alioth
-    repopick 331274 331547
+    #repopick
 
     # android_frameworks_base
     #repopick 320714 329326
-    repopick 331389 331390 331391
-    repopick 331392 331393 331545
+    #repopick -t qs-lightmode
+    #repopick -t powermenu-lightmode
 
     # android_packages_apps_LineageParts
     #repopick 326739

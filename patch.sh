@@ -95,12 +95,12 @@ else
     repopick 331131 330511 330510
 
     # android_device_xiaomi_alioth
-    #repopick
+    repopick 331740
 
     # android_frameworks_base
     #repopick 320714 329326
-    #repopick -t qs-lightmode
-    #repopick -t powermenu-lightmode
+    repopick -t qs-lightmode
+    repopick -t powermenu-lightmode
 
     # android_packages_apps_LineageParts
     #repopick 326739

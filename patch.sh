@@ -92,15 +92,19 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    repopick 331131 330511 330510 331880 331889 330509 331085
+    repopick 331131 330511 332066 332067 332068 332069 332070
 
     # android_device_xiaomi_alioth
     repopick 331777
 
     # android_frameworks_base
     #repopick 320714 329326
+    repopick 331627
     repopick -t qs-lightmode
     repopick -t powermenu-lightmode
+
+    # android_packages_apps_Camera2
+    repopick 330701 330702 331508
 
     # android_packages_apps_LineageParts
     #repopick 326739

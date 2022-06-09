@@ -92,10 +92,10 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    repopick 331131 330511 332070
+    repopick 331131 330511
 
     # android_device_xiaomi_alioth
-    repopick 331777
+    #repopick
 
     # android_frameworks_base
     #repopick 320714 329326

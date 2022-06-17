@@ -72,12 +72,6 @@ function apply_patch {
 
 apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
-apply_patch frameworks/base add_burnIn_protection.patch
-apply_patch frameworks/base bring_in_drawables_for_statusbar_icon_toggles.patch
-apply_patch packages/apps/LineageParts add_option_to_always_disable_USB_gadgets.patch
-apply_patch packages/apps/Updater add_support_for_local_updates.patch
-apply_patch packages/overlays/Lineage dynamically_add_additional_fonts.patch
-apply_patch vendor/lineage add_script_for_dynamically_adding_fonts.patch
 apply_patch vendor/lineage 0001-add-pixel-config.patch
 
 #################################################################
@@ -92,13 +86,13 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    repopick 331131 330511
+    repopick 331131 330511 332563 332783
 
     # android_device_xiaomi_alioth
     #repopick
 
     # android_frameworks_base
-    #repopick 320714 329326
+    repopick 320714 329326
     repopick 331627
     repopick -t qs-lightmode
     repopick -t powermenu-lightmode
@@ -107,22 +101,22 @@ else
     repopick 332230
 
     # android_packages_apps_LineageParts
-    #repopick 326739
+    #repopick
 
     # android_packages_apps_Trebuchet
     #repopick 330789
 
     # android_packages_apps_Settings
-    #repopick
+    repopick 332673
 
     # android_packages_apps_Updater
-    #repopick 323341
+    repopick 332089
 
     # android_packages_overlays_Lineage
-    #repopick -f 330450
+    repopick -f 330450
 
     # android_vendor_lineage
-    #repopick -f 330449
+    repopick -f 330449
 
     echo "Nothing to repopick here"
 fi

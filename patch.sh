@@ -103,7 +103,7 @@ else
     #repopick
 
     # android_packages_apps_Trebuchet
-    #repopick 330789
+    repopick 330789
 
     # android_packages_apps_Settings
     #repopick

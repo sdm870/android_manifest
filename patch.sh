@@ -92,9 +92,9 @@ else
 
     # android_frameworks_base
     repopick 329326 331627
-    repopick -t twelve-black
     repopick -t qs-lightmode
     repopick -t powermenu-lightmode
+    repopick -t twelve-black
 
     # android_packages_apps_Camera2
     repopick 332230

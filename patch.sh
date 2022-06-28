@@ -72,7 +72,6 @@ function apply_patch {
 
 apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
-apply_patch vendor/lineage 0001-add-pixel-config.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #
@@ -86,14 +85,14 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    repopick 332563 332783
+    #repopick
 
     # android_device_xiaomi_alioth
     #repopick
 
     # android_frameworks_base
-    repopick 320714 329326
-    repopick 331627
+    repopick 329326 331627
+    repopick -t twelve-black
     repopick -t qs-lightmode
     repopick -t powermenu-lightmode
 
@@ -107,16 +106,16 @@ else
     #repopick 330789
 
     # android_packages_apps_Settings
-    repopick 332673
+    #repopick
 
     # android_packages_apps_Updater
     repopick 332089
 
     # android_packages_overlays_Lineage
-    repopick -f 330450
+    repopick -f -t custom_font
 
     # android_vendor_lineage
-    repopick -f 330449
+    #repopick
 
     echo "Nothing to repopick here"
 fi

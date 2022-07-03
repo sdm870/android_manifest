@@ -105,7 +105,7 @@ else
     repopick 329250 329251
 
     # android_packages_apps_Trebuchet
-    repopick 330789 331251
+    repopick 330789 331251 317969
 
     # android_packages_apps_Settings
     #repopick
@@ -117,7 +117,7 @@ else
     repopick -f -t custom_font
 
     # android_vendor_lineage
-    repopick 333359
+    repopick -f 333359 331217 331218
 
     echo "Nothing to repopick here"
 fi

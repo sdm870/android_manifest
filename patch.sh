@@ -85,25 +85,27 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    #repopick
+    repopick 331802 333548 333549
 
     # android_device_xiaomi_alioth
-    #repopick
+    repopick 313678
 
     # android_frameworks_base
     repopick 329326 331627
-    repopick -t qs-lightmode
-    repopick -t powermenu-lightmode
     repopick -t twelve-black
+    repopick -f -t sfps-unlock
 
     # android_packages_apps_Camera2
     repopick 332230
 
     # android_packages_apps_LineageParts
-    #repopick
+    repopick 333365
+
+    # android_packages_apps_ThemePicker
+    repopick 329250 329251
 
     # android_packages_apps_Trebuchet
-    repopick 330789
+    repopick 330789 331251
 
     # android_packages_apps_Settings
     #repopick
@@ -115,7 +117,7 @@ else
     repopick -f -t custom_font
 
     # android_vendor_lineage
-    #repopick
+    repopick 333359
 
     echo "Nothing to repopick here"
 fi

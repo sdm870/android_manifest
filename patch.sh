@@ -93,7 +93,6 @@ else
     # android_frameworks_base
     repopick 329326 331627
     repopick -t twelve-black
-    repopick -f -t sfps-unlock
 
     # android_packages_apps_Camera2
     repopick 332230
@@ -117,7 +116,7 @@ else
     repopick -f -t custom_font
 
     # android_vendor_lineage
-    repopick -f 333359 331217 331218
+    repopick -f 331217 331218
 
     echo "Nothing to repopick here"
 fi

@@ -12,6 +12,6 @@
 
 	<!-- Extras -->
 	<project name="althafvly/android_vendor_extra" path="vendor/extra" remote="github" revision="lineage-19.1" clone-depth="10" />
-	<project name="althafvly/ih8sn" path="ih8sn" remote="github" revision="master" />
+	<project name="luk1337/ih8sn" path="ih8sn" remote="github" revision="master" />
 	<project name="althafvly/lineage_script" path="script" remote="github" revision="master" />
 </manifest>

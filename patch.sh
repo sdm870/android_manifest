@@ -72,6 +72,9 @@ function apply_patch {
 
 apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
+apply_patch frameworks/base 0001-SystemUI-Fix-circle-battery-icon-on-ui-change-mode.patch
+apply_patch packages/apps/Trebuchet 0001-Expose-themed-icon-setting-in-ThemePicker.patch
+apply_patch packages/apps/Trebuchet 0002-Launcher3-Add-support-for-themed-icons.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #
@@ -85,13 +88,16 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    #repopick
+    repopick 333879 333778
 
     # android_device_xiaomi_alioth
     repopick 331740
 
+    # android_kernel_xiaomi_sm8250
+    repopick 333824
+
     # android_frameworks_base
-    repopick 331627
+    repopick 331627 333878
     repopick -t twelve-black
 
     # android_packages_apps_Camera2
@@ -104,7 +110,7 @@ else
     repopick 329250 329251
 
     # android_packages_apps_Trebuchet
-    repopick 330789 331251 317969
+    repopick 330789 331251
 
     # android_packages_apps_Settings
     #repopick

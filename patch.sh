@@ -96,7 +96,7 @@ else
     repopick 333824
 
     # android_frameworks_base
-    repopick 331627 334005
+    repopick 331627
     repopick -t twelve-black
     repopick -t sfps-unlock
 

@@ -87,7 +87,7 @@ if ! command -v repopick &>/dev/null; then
     exit
 else
     # android_device_xiaomi_sm8250-common
-    repopick 333778
+    #repopick
 
     # android_device_xiaomi_alioth
     #repopick
@@ -97,7 +97,6 @@ else
 
     # android_frameworks_base
     repopick 331627 334005
-    repopick -t twelve-black
     repopick -t sfps-unlock
 
     # android_packages_apps_Camera2

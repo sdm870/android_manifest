@@ -72,8 +72,6 @@ function apply_patch {
 
 apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
-apply_patch packages/apps/Trebuchet 0001-Expose-themed-icon-setting-in-ThemePicker.patch
-apply_patch packages/apps/Trebuchet 0002-Launcher3-Add-support-for-themed-icons.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #
@@ -109,7 +107,7 @@ else
     repopick 329250 329251
 
     # android_packages_apps_Trebuchet
-    repopick 330789 331251
+    repopick 330789 331251 317969 317783
 
     # android_packages_apps_Settings
     repopick 332673

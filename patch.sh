@@ -84,17 +84,21 @@ if ! command -v repopick &>/dev/null; then
     echo "repopick could not be found"
     exit
 else
+    # android
+    repopick -t S_asb_2022-08
+
     # android_device_xiaomi_sm8250-common
-    #repopick
+    repopick 334166 334167 334233 334605 334565 334567 334572 334573
+    repopick 334574 334575 334576 334577 334608 334609 334528
 
     # android_device_xiaomi_alioth
-    #repopick
+    repopick 334644 334645 334646 334647
 
     # android_kernel_xiaomi_sm8250
     repopick 333824
 
     # android_frameworks_base
-    repopick 331627 334005
+    repopick 331627 334005 334281
     repopick -t sfps-unlock
 
     # android_packages_apps_Camera2
@@ -107,7 +111,7 @@ else
     repopick 329250 329251
 
     # android_packages_apps_Trebuchet
-    repopick 330789 331251 317969 317783
+    repopick 331251 317969 317783
 
     # android_packages_apps_Settings
     repopick 332673

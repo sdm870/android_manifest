@@ -88,18 +88,17 @@ else
     repopick -t S_asb_2022-08
 
     # android_device_xiaomi_sm8250-common
-    repopick 334166 334167 334233 334605 334565 334567 334572 334573
-    repopick 334574 334575 334576 334577 334608 334609 334528
+    repopick 334166 334167 334233 334605 334565 334567 334572
+    repopick 335326 335440 335441 335326
 
     # android_device_xiaomi_alioth
-    repopick 334644 334645 334646 334647
+    repopick 334644 334645 334646
 
     # android_kernel_xiaomi_sm8250
-    repopick 333824
+    #repopick
 
     # android_frameworks_base
-    repopick 331627 334005 334281
-    repopick -t sfps-unlock
+    repopick 331627
 
     # android_packages_apps_Camera2
     repopick 332230
@@ -108,13 +107,10 @@ else
     #repopick
 
     # android_packages_apps_ThemePicker
-    repopick 329250 329251
+    #repopick
 
     # android_packages_apps_Trebuchet
-    repopick 331251 317969 317783
-
-    # android_packages_apps_Settings
-    repopick 332673
+    #repopick
 
     # android_packages_apps_Updater
     repopick 332089

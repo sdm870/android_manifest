@@ -84,8 +84,6 @@ if ! command -v repopick &>/dev/null; then
     echo "repopick could not be found"
     exit
 else
-    # android
-    repopick -t S_asb_2022-08
 
     # android_device_xiaomi_sm8250-common
     repopick 334166 334167 334233 334605 334565 334567 334572

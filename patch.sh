@@ -112,6 +112,9 @@ else
     # android_packages_apps_Trebuchet
     #repopick
 
+    # android_packages_apps_Settings
+    repopick 337426
+
     # android_packages_apps_Updater
     repopick 332089
 

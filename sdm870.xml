@@ -11,8 +11,8 @@
 	<project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" revision="lineage-19.1" />
 
 	<!-- Extras -->
-	<project name="althafvly/android_vendor_extra" path="vendor/extra" remote="github" revision="lineage-19.1" clone-depth="1" />
-	<project name="althafvly/ih8sn" path="ih8sn" remote="github" revision="kona" />
+	<project name="sdm870/android_vendor_extra" path="vendor/extra" remote="github" revision="lineage-19.1" clone-depth="1" />
+	<project name="sdm870/ih8sn" path="ih8sn" remote="github" revision="kona" />
 	<project name="althafvly/lineage_script" path="script" remote="github" revision="master" />
 
         <project name="MindTheGapps/vendor_gapps" path="vendor/gapps" remote="gitlab" revision="sigma" clone-depth="1" />

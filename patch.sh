@@ -89,7 +89,7 @@ else
     repopick 331802 338209 338340
 
     # android_device_xiaomi_alioth
-    repopick 338341 338263
+    repopick 338341 338263 338358
 
     # android_kernel_xiaomi_sm8250
     #repopick

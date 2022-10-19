@@ -7,7 +7,7 @@
 	<project name="LineageOS/android_device_xiaomi_alioth" path="device/xiaomi/alioth" remote="github" revision="lineage-19.1" />
 	<project name="LineageOS/android_device_xiaomi_sm8250-common" path="device/xiaomi/sm8250-common" remote="github" revision="lineage-19.1" />
 	<project name="LineageOS/android_kernel_xiaomi_sm8250" path="kernel/xiaomi/sm8250" remote="github" revision="lineage-19.1" clone-depth="1" />
-	<project name="sdm870/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab" revision="lineage-19.1" clone-depth="1" />
+	<project name="the-muppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab" revision="lineage-19.1" clone-depth="1" />
 	<project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" revision="lineage-19.1" />
 
 	<!-- Extras -->

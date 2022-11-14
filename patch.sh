@@ -86,11 +86,11 @@ if ! command -v repopick &>/dev/null; then
 else
 
     # android_device_xiaomi_sm8250-common
-    repopick 331802 338209 338479 338480 338488 336750 338490 338492
-    repopick 338969 339066 339067 339068 339069
+    #repopick
+    #repopick
 
     # android_device_xiaomi_alioth
-    repopick 339218
+    #repopick
 
     # android_kernel_xiaomi_sm8250
     #repopick
@@ -99,7 +99,7 @@ else
     #repopick
 
     # android_lineage-sdk
-    repopick 336243
+    #repopick
 
     # android_frameworks_base
     #repopick

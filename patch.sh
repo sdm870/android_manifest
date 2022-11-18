@@ -128,5 +128,8 @@ else
     # android_vendor_lineage
     #repopick
 
+    # android_device_lineage_sepolicy
+    repopick -f 344075
+
     echo "Nothing to repopick here"
 fi

@@ -102,7 +102,7 @@ else
     #repopick
 
     # android_frameworks_base
-    #repopick
+    repopick 344138
 
     # android_packages_apps_Camera2
     #repopick
@@ -129,7 +129,7 @@ else
     #repopick
 
     # android_device_lineage_sepolicy
-    repopick -f 344075
+    #repopick
 
     echo "Nothing to repopick here"
 fi

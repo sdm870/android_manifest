@@ -31,6 +31,7 @@ familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
     mkdir .repo/local_manifests
 
     wget -O .repo/local_manifests/sdm870.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/sdm870.xml'
+    wget -O .repo/local_manifests/extra.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/extra.xml'
 
 6.Then to sync up:
 

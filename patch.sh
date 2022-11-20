@@ -72,6 +72,7 @@ function apply_patch {
 
 # apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 # apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
+apply_patch packages/modules/Bluetooth 0001-Fallback-to-the-same-certificate-as-platform.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #

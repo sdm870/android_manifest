@@ -38,7 +38,7 @@ WHITE='\033[1;37m'
 function download_patch {
     echo -e "${GREEN}Downloading patch $2...${NOCOLOR}"
     cd "$PATCH_DIR" || exit
-    wget -O "$2" https://raw.githubusercontent.com/sdm870/android_manifest/lineage-19.1/patches/"$1"/"$2" -q --show-progress
+    wget -O "$2" https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/patches/"$1"/"$2" -q --show-progress
     echo -e "${GREEN}.................${NOCOLOR}"
 }
 
@@ -72,7 +72,8 @@ function apply_patch {
 
 # apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
 # apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
-apply_patch packages/modules/Bluetooth 0001-Fallback-to-the-same-certificate-as-platform.patch
+apply_patch build/make 0001-Add-bluetooth-and-sdk_sandbox-to-default-key-map.patch
+apply_patch packages/modules/Bluetooth 0001-bluetooth-abandon-app-local-certificate.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #

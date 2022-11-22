@@ -71,9 +71,6 @@ function apply_patch {
 }
 
 # apply_patch frameworks/base 0001-base-Introduce-PixelPropsUtils.patch
-# apply_patch frameworks/base 0001-PixelPropsUtils-spoof-photos.patch
-apply_patch build/make 0001-Add-bluetooth-and-sdk_sandbox-to-default-key-map.patch
-apply_patch packages/modules/Bluetooth 0001-bluetooth-abandon-app-local-certificate.patch
 
 #################################################################
 # GERRIT CHERRYPICKS                                            #
@@ -104,7 +101,7 @@ else
     #repopick
 
     # android_frameworks_base
-    repopick 344138
+    #repopick
 
     # android_packages_apps_Camera2
     #repopick

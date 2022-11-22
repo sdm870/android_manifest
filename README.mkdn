@@ -31,6 +31,9 @@ familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
     mkdir .repo/local_manifests
 
     wget -O .repo/local_manifests/sdm870.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/sdm870.xml'
+
+For ih8sn, gapps and extra useful apps include this.
+
     wget -O .repo/local_manifests/extra.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/extra.xml'
 
 6.Then to sync up:
@@ -59,6 +62,10 @@ OR, for those with limited bandwidth/storage:
 10.To start the build once everything is ready , Run to prepare our devices list
 
     . build/envsetup.sh
+
+To include gapps
+
+    export WITH_GMS=true
 
 11.Now build
 

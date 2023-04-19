@@ -46,8 +46,11 @@ OR, for those with limited bandwidth/storage:
 
 7.Run this command to patch stuff and pick from gerrit
 
-    wget -O patch.sh 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/patch.sh'
-    bash patch.sh
+    curl https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/patch.sh | bash
+
+And, ih8sn patch if its included:
+
+    curl https://raw.githubusercontent.com/althafvly/ih8sn/master/patch.sh | bash
 
 8.Run this command if you used the automatic method of setup above (50GB ccache (onetime requirement))
 

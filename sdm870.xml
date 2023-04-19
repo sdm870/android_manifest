@@ -12,5 +12,5 @@
 	<project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" revision="lineage-20" />
 
 	<!-- Extras -->
-	<project name="althafvly/lineage_script" path="script" remote="github" revision="lineage-20.0" />
+	<project name="althafvly/lineage_script" path="script" remote="github" revision="master" />
 </manifest>

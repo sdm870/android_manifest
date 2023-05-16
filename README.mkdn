@@ -23,8 +23,7 @@ familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 
 4.To initialize your local repository using the LineageOS trees, use a command like this:
 
-    repo init -u https://github.com/LineageOS/android.git -b lineage-20.0
-     
+    repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
 
 5.Now create a local_manifests dir and Copy the required manifests in that folder.
 
@@ -32,7 +31,7 @@ familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 
     wget -O .repo/local_manifests/sdm870.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/sdm870.xml'
 
-For ih8sn, gapps and extra useful apps include this.
+For ih8sn and extra useful apps include this.
 
     wget -O .repo/local_manifests/extra.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/extra.xml'
 
@@ -65,10 +64,6 @@ And, ih8sn patch if its included:
 10.To start the build once everything is ready , Run to prepare our devices list
 
     . build/envsetup.sh
-
-To include gapps
-
-    export WITH_GMS=true
 
 11.Now build
 

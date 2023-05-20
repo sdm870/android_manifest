@@ -86,7 +86,6 @@ else
 
     # android_device_xiaomi_sm8250-common
     #repopick
-    #repopick
 
     # android_device_xiaomi_alioth
     #repopick

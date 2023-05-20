@@ -49,7 +49,7 @@ OR, for those with limited bandwidth/storage:
 
 And, ih8sn patch if its included:
 
-    curl https://raw.githubusercontent.com/althafvly/ih8sn/master/patch.sh | bash
+    curl https://raw.githubusercontent.com/althafvly/ih8sn/master/patches/patch.sh | bash
 
 8.Run this command if you used the automatic method of setup above (50GB ccache (onetime requirement))
 

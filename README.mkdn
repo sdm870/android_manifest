@@ -23,17 +23,17 @@ familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 
 4.To initialize your local repository using the LineageOS trees, use a command like this:
 
-    repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
+    repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
 
 5.Now create a local_manifests dir and Copy the required manifests in that folder.
 
     mkdir .repo/local_manifests
 
-    wget -O .repo/local_manifests/sdm870.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/sdm870.xml'
+    wget -O .repo/local_manifests/sdm870.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-21.0/sdm870.xml'
 
 For ih8sn and extra useful apps include this.
 
-    wget -O .repo/local_manifests/extra.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/extra.xml'
+    wget -O .repo/local_manifests/extra.xml 'https://raw.githubusercontent.com/sdm870/android_manifest/lineage-21.0/extra.xml'
 
 6.Then to sync up:
 
@@ -45,7 +45,7 @@ OR, for those with limited bandwidth/storage:
 
 7.Run this command to patch stuff and pick from gerrit
 
-    curl https://raw.githubusercontent.com/sdm870/android_manifest/lineage-20.0/patch.sh | bash
+    curl https://raw.githubusercontent.com/sdm870/android_manifest/lineage-21.0/patch.sh | bash
 
 And, ih8sn patch if its included:
 

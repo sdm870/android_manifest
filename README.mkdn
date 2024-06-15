@@ -7,7 +7,7 @@ familiar with [Git and Repo](https://source.android.com/source/using-repo.html).
 1.Set up your environment
 
     sudo apt-get install git-core
-    git clone https://github.com/akhilnarang/scripts
+    git clone https://github.com/althafvly/scripts
     cd scripts
     bash setup/android_build_env.sh
 
